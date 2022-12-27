@@ -1,0 +1,14 @@
+﻿---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dotnetapi-source-pvc
+  namespace: cicd
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: crc-csi-hostpath-provisioner
+  volumeMode: Filesystem

@@ -1,0 +1,19 @@
+﻿---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dotnetapi
+  name: dotnetapi
+  namespace: delta
+spec:
+  ports:
+    - name: 8080-tcp
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: dotnetapi
+    deploymentconfig: dotnetapi
+  sessionAffinity: None
+  type: ClusterIP
